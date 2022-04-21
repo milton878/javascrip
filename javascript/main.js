@@ -90,11 +90,11 @@ function removeItemCarrito(e){
     const buttonDelete = e.target
     const tr = buttonDelete.closest(".itemCarrito")
     const title = tr.querySelector('.title').textContent;
-    for(let i = 0; i < carrito.length; í++){
+    for(let i = 0; i < carrito.length; i++){
 
         if(carrito[i].title.trim() === title.trim()){
             carrito.splice(i, 1)
-            
+           
         }
     }
     tr.remove()
@@ -103,7 +103,7 @@ function removeItemCarrito(e){
 }
 
 function sumaCantidad(e){
-    const sumaInput  = e.target
+    const sumaInput = e.target
     const tr = sumaInput.closest(".ItemCarrito")
     const title = tr.querySelector('.title').textContent;
     carrito.forEach(item => {
@@ -113,5 +113,6 @@ function sumaCantidad(e){
         CarritoTotal()
       }
     })
+    console.log(carrito)
   }
   
