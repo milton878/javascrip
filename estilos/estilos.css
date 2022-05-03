@@ -3,8 +3,9 @@ body{
     background-color: rgb(27, 25, 25);
 
 }
-header{
+header, .alert{
     z-index: 100;
+
 }
 .fondo{
   min-height:calc(100vh - 50px );/*para que tome la pantalla completa*/
@@ -65,4 +66,7 @@ h3{
     font-weight: 700;
     margin-right: 30px;
     margin-bottom: 20px;
+  }
+  .hide, .remove{
+    display: none;
   }
