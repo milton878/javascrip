@@ -134,3 +134,16 @@ function sumaCantidad(e){
           renderCarrito()
       }
   }
+
+  //jquery
+
+  $ (document).ready(function(){
+      $('button').on('click', function(){
+        $('.caja').animate({
+            width: '200px',
+            opacity:'0.5'
+        }, 2000, function(){
+            alert('producto añadido');
+        });
+      });
+  });
