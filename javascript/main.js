@@ -135,15 +135,75 @@ function sumaCantidad(e){
       }
   }
 
-  //jquery
+  //jquery 
 
-  $ (document).ready(function(){
-      $('button').on('click', function(){
-        $('.caja').animate({
-            width: '200px',
-            opacity:'0.5'
-        }, 2000, function(){
-            alert('producto añadido');
-        });
-      });
-  });
+//   $ (document).ready(function(){
+//       $('button').on('click', function(){
+//         $('.caja').animate({
+//             width: '200px',
+//             opacity:'0.5'
+//         }, 2000, function(){
+//             alert('producto añadido');
+//         });
+//       });
+//   });
+
+  //=== fetch:
+
+  const boton = document.querySelector("#btn");
+  const container2 = document.querySelector(".container2");
+
+  //funcion- con fetch
+//   const obtenerDatos = ()=>{
+//     //fetch(url,conf opcional)
+//     fetch("prueba.txt")
+//         .then(response => response.text())
+//         .then(result => container2.innerHTML += `<p>${result}</p>` )
+//         .catch(error => console.log(error))
+//   }
+//--- json:
+// const obtenerDatos = ()=>{
+//      fetch("datos.json")
+//         .then(response => response.json())
+//         .then(result =>{
+//             let datos = result;
+//             datos.forEach(user =>{
+//                 container2.innerHTML += `
+//                 <h3>${user.nombre}</h3>
+//                 <p>${user.edad}</p>
+//                 <p>${user.profesion}<p>
+
+//                 `
+//             })
+//         })
+//         .catch(error => console.log(error))
+
+// }
+
+ // desde una api externa
+const obtenerDatos = ()=>{
+    fetch("https://randomuser.me/api")
+       .then(response => response.json())
+       .then(result => {
+           console.log(result)
+           let datos = result.results;
+           datos.forEach(user =>{
+               container2.innerHTML += `
+               <img src="${user.picture.medium}">
+               <h3>${user.name.first}</h3>
+               <p>${user.cell}</p>
+               <p>${user.email}<p>
+
+               `
+           })
+       })
+       .catch(error => console.log(error))
+
+    }
+
+  boton.onclick = () =>{
+      obtenerDatos();
+  }
+
+ 
+ 

@@ -1,0 +1,3 @@
+Hola profe presento mi proyecto final decidi hacer esta pagina porque 
+es de mi parrilla restaurante, que no tenia pagina, con javascript le hice un carrito 
+de compras. abarcando los concepto dados en el curso.
